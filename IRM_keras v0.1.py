@@ -91,7 +91,7 @@ print('\n---------IRM from paper on Keras---------')
 print('tf.random.set_seed(10)')
 historyLst = []
 for iteration in range(5000):
-    for i in range(len(environments)-1):
+    for i in range(len(environments)):
         x_e, y_e = environments[i]
         if i == 0:
             train_x = x_e
