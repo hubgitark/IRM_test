@@ -41,6 +41,7 @@ def compute_penalty(y_true, y_pred):
         tape.watch(dummy_w)
         losses2 = mse(y_true2, y_pred2*dummy_w)
     grad2 = tape.gradient(losses2, [dummy_w])[0]
+    
     return tf.math.reduce_sum(grad1*grad2)
 
 
@@ -61,6 +62,7 @@ def loss_IRM(y_true, y_pred):
     
     error = error1+error2
     penalty = penalty1+penalty2
+    
     return 1e-5 * error + penalty
  
 def example_1 (n=10000, d=2, env=1):
